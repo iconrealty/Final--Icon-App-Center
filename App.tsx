@@ -206,7 +206,7 @@ const App = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginPass === 'admin') {
+    if (loginPass === 'loginadmin') {
       setUser({ name: 'Tim Manager', initials: 'TM', role: 'admin' });
       setIsLoginOpen(false);
       setLoginPass('');
@@ -376,14 +376,14 @@ const App = () => {
               <input 
                 type="password" 
                 className={`w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors ${loginError ? 'border-red-300 bg-red-50' : 'border-gray-300'}`}
-                placeholder="Enter password (use 'admin')"
+                placeholder="Enter password (use 'loginadmin')"
                 value={loginPass}
                 onChange={(e) => setLoginPass(e.target.value)}
                 autoFocus
               />
               <Lock className="absolute right-3 top-3 w-4 h-4 text-gray-400" />
             </div>
-            {loginError && <p className="text-xs text-red-500 mt-1">Incorrect password. Try 'admin'.</p>}
+            {loginError && <p className="text-xs text-red-500 mt-1">Incorrect password. Try 'loginadmin'.</p>}
           </div>
           <button 
             type="submit" 
