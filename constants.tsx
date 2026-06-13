@@ -3,7 +3,7 @@ import { AppLink } from './types';
 // INCREMENT THIS VERSION NUMBER (e.g. '1.2' -> '1.3') whenever you deploy changes 
 // to INITIAL_APPS. This will force all users' browsers to discard their old 
 // local save and load the new list from this file.
-export const APP_VERSION = '1.4';
+export const APP_VERSION = '1.5';
 
 export const INITIAL_APPS: AppLink[] = [
   {
@@ -102,14 +102,14 @@ export const INITIAL_APPS: AppLink[] = [
     "title": "Assessor",
     "description": "OC",
     "url": "https://assessedvalue.ocassessor.gov/?utm_source=chatgpt.com",
-    "icon": "LayoutGrid"
+    "icon": "LucideCassetteTape"
   },
   {
     "id": "1781310183427",
     "title": "Master Contracts",
     "description": "RLA-RPA",
     "url": "https://car-listing-sand.vercel.app/",
-    "icon": "LayoutGrid"
+    "icon": "LucideNotebookText"
   },
   {
     "id": "1781310254654",
