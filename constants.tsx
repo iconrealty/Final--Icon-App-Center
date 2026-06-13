@@ -3,7 +3,7 @@ import { AppLink } from './types';
 // INCREMENT THIS VERSION NUMBER (e.g. '1.2' -> '1.3') whenever you deploy changes 
 // to INITIAL_APPS. This will force all users' browsers to discard their old 
 // local save and load the new list from this file.
-export const APP_VERSION = '1.5';
+export const APP_VERSION = '1.9';
 
 export const INITIAL_APPS: AppLink[] = [
   {
@@ -47,13 +47,6 @@ export const INITIAL_APPS: AppLink[] = [
     "description": "Market Insights",
     "url": "https://sites.google.com/mcluregroup.com/hub/housing-report?",
     "icon": "House"
-  },
-  {
-    "id": "7",
-    "title": "Celebrity Agent",
-    "description": "Listing generation",
-    "url": "https://backoffice.celebrityagent.com/login?",
-    "icon": "Share2"
   },
   {
     "id": "8",

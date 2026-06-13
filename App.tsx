@@ -181,10 +181,14 @@ const App = () => {
     const savedData = localStorage.getItem('icon_app_center_data');
     const savedVersion = localStorage.getItem('icon_app_center_version');
 
+    let loadedApps: AppLink[];
     if (savedVersion !== APP_VERSION) {
-      return INITIAL_APPS;
+      loadedApps = INITIAL_APPS;
+    } else {
+      loadedApps = savedData ? JSON.parse(savedData) : INITIAL_APPS;
     }
-    return savedData ? JSON.parse(savedData) : INITIAL_APPS;
+    // Force remove Celebrity Agent to clean up any cached state
+    return loadedApps.filter(app => app && app.title !== 'Celebrity Agent' && !app.url.includes('celebrityagent'));
   });
 
   const [user, setUser] = useState<User | null>(null);
@@ -316,16 +320,30 @@ const App = () => {
             </div>
 
             {user?.role === 'admin' && (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 {isEditingMode && (
-                  <button
-                    onClick={exportConfig}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 transition-all shadow-sm"
-                    title="Copy current setup as code to paste in constants.tsx"
-                  >
-                    {copyFeedback ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                    {copyFeedback ? 'Copied!' : 'Copy Config for GitHub'}
-                  </button>
+                  <>
+                    <button
+                      onClick={() => {
+                        if (window.confirm('Are you sure you want to reset all apps to defaults? This will load the latest config.')) {
+                          setApps(INITIAL_APPS);
+                        }
+                      }}
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 transition-all shadow-sm"
+                      title="Reset all apps to the default list from code"
+                    >
+                      <X className="w-4 h-4" />
+                      Reset to Defaults
+                    </button>
+                    <button
+                      onClick={exportConfig}
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 transition-all shadow-sm"
+                      title="Copy current setup as code to paste in constants.tsx"
+                    >
+                      {copyFeedback ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+                      {copyFeedback ? 'Copied!' : 'Copy Config for GitHub'}
+                    </button>
+                  </>
                 )}
                 <button
                   onClick={() => setIsEditingMode(!isEditingMode)}
