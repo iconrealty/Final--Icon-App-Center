@@ -69,20 +69,9 @@ const AppCard: React.FC<AppCardProps> = ({
   const IconComponent = (LucideIcons as any)[app.icon] || LucideIcons.LayoutGrid;
 
   const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
     if (isEditing) {
+      e.preventDefault();
       onEdit(app);
-    } else {
-      const width = 1200;
-      const height = 800;
-      const left = window.screen.width ? (window.screen.width - width) / 2 : 100;
-      const top = window.screen.height ? (window.screen.height - height) / 2 : 100;
-      
-      window.open(
-        app.url, 
-        '_blank', 
-        `toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${width},height=${height},top=${top},left=${left}`
-      );
     }
   };
 
@@ -102,6 +91,8 @@ const AppCard: React.FC<AppCardProps> = ({
       
       <a 
         href={isEditing ? undefined : app.url} 
+        target={isEditing ? undefined : "_blank"}
+        rel="noopener noreferrer"
         onClick={handleClick}
         className={`block h-full bg-white rounded-2xl p-4 shadow-sm border border-gray-100/50 
           hover:shadow-lg hover:-translate-y-1 
