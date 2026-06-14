@@ -288,7 +288,7 @@ const App = () => {
         
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="text-3xl tracking-tight text-gray-900 mb-2 font-neue-haas-black">OneMuNR Hub</h2>
+            <h2 className="text-3xl tracking-tight text-gray-900 mb-2 font-neue-haas-black">One Hub</h2>
             {isEditingMode && (
               <p className="text-sm text-blue-600 font-medium animate-pulse">
                 Editing Mode Active: Changes are currently local only.
