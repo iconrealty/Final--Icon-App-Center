@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded">app</div>
-          <h1 className="text-base font-semibold tracking-wide text-gray-900 uppercase">MNR.</h1>
+          <h1 className="text-2xl tracking-wide text-gray-900 font-neue-haas-black">MuNR</h1>
         </div>
 
         <div className="flex items-center gap-4">
@@ -288,7 +288,7 @@ const App = () => {
         
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-2">OneMNR. Hub</h2>
+            <h2 className="text-3xl tracking-tight text-gray-900 mb-2 font-neue-haas-black">OneMuNR Hub</h2>
             {isEditingMode && (
               <p className="text-sm text-blue-600 font-medium animate-pulse">
                 Editing Mode Active: Changes are currently local only.
