@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded">app</div>
-          <h1 className="text-2xl tracking-wide text-gray-900 font-neue-haas-black">MuNR</h1>
+          <h1 className="text-3xl md:text-4xl tracking-wide text-gray-900 font-black font-neue-haas-black">MuNR.</h1>
         </div>
 
         <div className="flex items-center gap-4">
