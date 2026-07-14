@@ -3,7 +3,7 @@ import { AppLink } from './types';
 // INCREMENT THIS VERSION NUMBER (e.g. '1.2' -> '1.3') whenever you deploy changes 
 // to INITIAL_APPS. This will force all users' browsers to discard their old 
 // local save and load the new list from this file.
-export const APP_VERSION = '1.10';
+export const APP_VERSION = '1.20';
 
 export const INITIAL_APPS: AppLink[] = [
   {
@@ -117,5 +117,12 @@ export const INITIAL_APPS: AppLink[] = [
     "description": "Assesor",
     "url": "https://portal.assessor.lacounty.gov",
     "icon": "FileImage"
+  },
+  {
+    "id": "1783969411306",
+    "title": "Fidelity",
+    "description": "TitlePro",
+    "url": "https://v3.titlepro247.com/Account/Index",
+    "icon": "AccessibilityIcon"
   }
 ];
